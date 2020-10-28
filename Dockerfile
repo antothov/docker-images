@@ -1,4 +1,4 @@
-FROM scratch 
-ADD alpine-minirootfs-3.12.0-x86_64.tar.gz /
-CMD [ "/bin/sh" ]
-LABEL date="08.10.2020"
+FROM nginx:alpine
+COPY  index.html /usr/share/nginx/html/index.html
+LABEL maintainer="Anita"
+CMD [ "nginx", "-g", "daemon off" ]
