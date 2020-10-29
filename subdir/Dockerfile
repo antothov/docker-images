@@ -1,9 +1,7 @@
 FROM nginx:alpine
 COPY nginx.conf /etc/nginx/nginx.conf
-RUN chgrp -R 0 /var/cache/nginx \  
-    && chmod -R g+rwx /var/cache/nginx \ 
-	&& chgrp 0 /var/run/nginx.pid
-    && chmod g+rwx /var/run/nginx.pid
+RUN chgrp 0 /var/run /var/log/nginx /var/cache/nginx \
+    && chmod g+rwx /var/run /var/log/nginx /var/cache/nginx
 COPY  index.html /usr/share/nginx/html/index.html
 EXPOSE 8080
 LABEL maintainer="Anita"
