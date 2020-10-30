@@ -1,3 +1,2 @@
-# Mini image
+# openshift image
 
-Moj prvy image
